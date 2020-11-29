@@ -33,13 +33,18 @@ async def timer(ctx, time, members: commands.Greedy[discord.Member] = None, mess
         await ctx.send(f"Die Zeit ist abgelaufen! :disappointed_relieved: :point_right: :alarm_clock:\nNachricht: {message}")
 
     else:
+        print(members)
         time = int(time)
         if time <= 0:
             await ctx.send("Das ist keine richtige Zeitangabe, du Ochogesicht :rage:")
             return
         member_pinged = " und ".join(x.mention for x in members)
-        member = " und ".join(x.nick for x in members)
-        await ctx.send(f"Jo, ich werde {member} in {time} Minuten pingen!")
+        # displaymember = ""
+        # for member in members:
+        #     nickname = member.name if not member.nick else member.nick
+        #     displaymember = " und ".join(nickname)
+        #member = " und ".join(x.nick for x in members)
+        await ctx.send(f"Jo, ich werde {member_pinged} in {time} Minuten pingen!")
         time = time * 60
         # while True:
         #     time = time - 1
