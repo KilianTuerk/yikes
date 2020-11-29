@@ -18,7 +18,7 @@ async def timer(ctx, time, members: commands.Greedy[discord.Member] = None, mess
     if not members:
         time = int(time)
         if time <= 0:
-            await ctx.send("Das ist keine richtige Zeitangabe, du Ochogesicht :middle_finger:")
+            await ctx.send("Das ist keine richtige Zeitangabe, du Ochogesicht :rage:")
             return
         await ctx.send("Jo, aber ich pinge keinen!")
         time = time * 60
@@ -35,7 +35,7 @@ async def timer(ctx, time, members: commands.Greedy[discord.Member] = None, mess
     else:
         time = int(time)
         if time <= 0:
-            await ctx.send("Das ist keine richtige Zeitangabe, du Ochogesicht :middle_finger:")
+            await ctx.send("Das ist keine richtige Zeitangabe, du Ochogesicht :rage:")
             return
         member_pinged = " und ".join(x.mention for x in members)
         member = " und ".join(x.nick for x in members)
