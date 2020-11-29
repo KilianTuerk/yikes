@@ -15,39 +15,7 @@ TOKEN = os.getenv('DISCORD_TOKEN')
 bot = Bot(command_prefix='-')
 
 @bot.command()
-async def timer(ctx, time, members: commands.Greedy[discord.Member] = None, message = "Keine Nachricht angegeben"):
-    # if members and message:
-    #     time = int(time)
-    #     if time <= 0:
-    #         await ctx.send("Bitte gib eine positive Zahl an!")
-    #         return
-    #     pinged = ", ".join(x.mention for x in members)
-    #     await ctx.send(f"Okay, ich werde {pinged} in {time} Minuten pingen und eine Nachricht schreiben (Auge dreamin' botto)!")
-    #     time = time * 60
-    #     while True:
-    #         time = time - 1
-    #         logging.info(time)
-    #         if time == 0:
-    #             await ctx.send(f"{pinged} Die Zeit ist abgelaufen! 🚨\nNachricht:{message}")
-    #             break
-    #         await asyncio.sleep(1)
-
-    # if members and not message:
-    #     time = int(time)
-    #     if time <= 0:
-    #         await ctx.send("Bitte gib eine positive Zahl an!")
-    #         return
-    #     pinged = ", ".join(x.mention for x in members)
-    #     await ctx.send(f"Okay, ich werde {pinged} in {time} Minuten pingen!")
-    #     time = time * 60
-    #     while True:
-    #         time = time - 1
-    #         logging.info(time)
-    #         if time == 0:
-    #             await ctx.send(f"{pinged} Die Zeit ist abgelaufen! :disappointed_relieved: :point_right: :alarm_clock")
-    #             break
-    #         await asyncio.sleep(1)
-                
+async def timer(ctx, time, members: commands.Greedy[discord.Member] = None, message = "Keine Nachricht angegeben"):   
     if not members:
         time = int(time)
         if time <= 0:
